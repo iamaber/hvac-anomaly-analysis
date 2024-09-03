@@ -1,0 +1,8 @@
+T_supply = Temperature supply 
+T_return = Temperature return 
+SP_return = Temperature set points of the return air 
+T_Saturation = Saturation temperature in the humidifier
+T_Outdoor = Temperature outdoor
+RH_Supply = Relative humidity supply (%)
+RH_Return = Relative humidity return (%)
+RH_Outdoor = Relative humidity outdoor(%)
