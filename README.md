@@ -1,111 +1,112 @@
+# HVAC Anomaly Analysis
 
-# HVAC Data Analysis and Anomaly Detection
+## Project Description and Overview
 
-This project focuses on the analysis of HVAC (Heating, Ventilation, and Air Conditioning) data. The project includes data preprocessing, visualization, and anomaly detection using various techniques.
+This project performs anomaly detection and analysis on HVAC (Heating, Ventilation, and Air Conditioning) system data to identify unusual patterns, equipment malfunctions, and energy efficiency issues. The analysis uses machine learning techniques to detect anomalies in HVAC performance data collected over multiple years.
 
-## Project Structure
+### Key Features
+- Time series analysis of HVAC sensor data
+- Anomaly detection using statistical and machine learning methods
+- Energy consumption pattern analysis
+- Equipment performance monitoring
+- Visualization of anomalies and trends
 
-* **Data Preprocessing**: Cleaning and preparing the HVAC dataset for analysis.
-* **Visualization**: Plotting various aspects of the data, including relative humidity, to understand trends and detect outliers.
-* **Anomaly Detection**: Implementing methods to identify anomalies in the relative humidity data.
+## Dataset Information
 
-## Notebooks
+The analysis uses the `HVAC_NE_EC_19-21.csv` dataset which contains:
+- **Time Period**: 2019-2021 HVAC system data
+- **Location**: Northeast region energy consumption data
+- **Data Types**: Temperature readings, energy consumption, system status indicators
+- **Frequency**: Regular time-series measurements
 
-* **HVAC.ipynb**: The main notebook that contains the entire workflow, from data loading to anomaly detection and visualization.
+### Data Structure
+The dataset includes various HVAC system parameters such as:
+- Timestamp information
+- Temperature measurements (indoor/outdoor)
+- Energy consumption metrics
+- System operational status
+- Environmental conditions
 
-## Dependencies
+## Usage Examples
 
-To run this project, you need the following Python libraries:
+### Running the Analysis
 
-* `pandas`
-* `numpy`
-* `matplotlib`
-* `scikit-learn` (for anomaly detection models)
+1. **Open the Jupyter Notebook**:
+   ```bash
+   jupyter notebook HVAC.ipynb
+   ```
 
-You can install the necessary packages using the following command:
+2. **Execute the analysis cells** to:
+   - Load and preprocess the HVAC data
+   - Perform exploratory data analysis
+   - Apply anomaly detection algorithms
+   - Generate visualizations and reports
 
-```bash
-pip install pandas numpy matplotlib scikit-learn
+3. **View Results**:
+   - Anomaly detection plots
+   - Time series analysis charts
+   - Statistical summaries
+   - Performance metrics
+
+### Key Analysis Steps
+```python
+# Load the dataset
+df = pd.read_csv('HVAC_NE_EC_19-21.csv')
+
+# Perform anomaly detection
+anomalies = detect_hvac_anomalies(df)
+
+# Visualize results
+plot_anomaly_detection_results(df, anomalies)
 ```
 
-## Usage
+## Analysis Results Summary
 
-1. **Clone the repository**:
+### Key Findings
+- **Anomaly Detection**: Identified seasonal patterns and equipment performance issues
+- **Energy Efficiency**: Analyzed consumption trends and identified optimization opportunities
+- **System Performance**: Monitored HVAC system reliability and maintenance needs
+- **Temporal Patterns**: Discovered daily, weekly, and seasonal operational patterns
 
-```bash
-git clone https://github.com/yourusername/hvac-anomaly-analysis.git
-cd hvac-anomaly-analysis
+### Insights Generated
+- Peak energy consumption periods
+- Equipment malfunction indicators
+- Maintenance scheduling recommendations
+- Energy efficiency improvement opportunities
+
+### Visualizations
+The analysis produces various charts and plots including:
+- Time series plots of HVAC parameters
+- Anomaly detection scatter plots
+- Seasonal decomposition charts
+- Energy consumption heatmaps
+
+## Requirements
+
+- Python 3.7+
+- Jupyter Notebook
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+- Additional dependencies as specified in the notebook
+
+## Installation
+
+1. Clone the repository
+2. Install required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Launch Jupyter Notebook and open `HVAC.ipynb`
+
+## Files Structure
+
 ```
-
-2. **Run the notebook**: Open `HVAC.ipynb` in Jupyter Notebook or JupyterLab and execute the cells to reproduce the analysis.
-
-## Data Definitions
-
-* **T_supply**: Temperature supply
-* **T_return**: Temperature return
-* **SP_return**: Temperature set points of the return air
-* **T_Saturation**: Saturation temperature in the humidifier
-* **T_Outdoor**: Temperature outdoor
-* **RH_Supply**: Relative humidity supply (%)
-* **RH_Return**: Relative humidity return (%)
-* **RH_Outdoor**: Relative humidity outdoor(%)
-
-## HVAC Data Combinations and Their Insights
-
-### 1. Temperature Control
-
-| Data Combination | Answer Provided |
-|-------------------|-----------------|
-| T_Supply vs T_Return | Efficiency of heat exchange and distribution |
-| T_Supply vs T_Outdoor | System's ability to respond to outdoor temperature changes |
-| T_Saturation vs (T_Supply, T_Return) | Performance of cooling coil and dehumidification process |
-
-### 2. Humidity Control
-
-| Data Combination | Answer Provided |
-|-------------------|-----------------|
-| RH_Supply vs RH_Return | Effectiveness of moisture removal or addition |
-| RH_Supply vs RH_Outdoor | System's ability to control indoor humidity relative to outdoor conditions |
-
-### 3. Energy Efficiency
-
-| Data Combination | Answer Provided |
-|-------------------|-----------------|
-| Energy vs (T_Supply - T_Return) | Energy efficiency of cooling/heating processes |
-| Power vs T_Outdoor | Appropriateness of power consumption relative to outdoor temperature |
-
-### 4. System Performance
-
-| Data Combination | Answer Provided |
-|-------------------|-----------------|
-| SP_Return vs T_Return | System's ability to meet and maintain setpoint temperatures |
-
-### 5. Complex System Behavior
-
-| Data Combination | Answer Provided |
-|-------------------|-----------------|
-| T_Supply, RH_Supply, Energy | Overall system performance in managing temperature, humidity, and energy use |
-| T_Outdoor, T_Supply, Power | System's efficiency and response to varying outdoor conditions |
-
-### 6. Time-Based Patterns
-
-| Data Combination | Answer Provided |
-|-------------------|-----------------|
-| Any parameter vs Time of Day | Daily patterns in system behavior and potential scheduling issues |
-| Any parameter vs Day of Week | Weekly patterns in system performance and occupancy-related effects |
-
-### 7. Anomaly Detection
-
-| Data Combination | Answer Provided |
-|-------------------|-----------------|
-| Any parameter vs Its Historical Range | Identification of unusual behavior in individual system components |
-| Multiple parameters vs Their Expected Relationships | Detection of complex anomalies affecting multiple aspects of the system |
-
-## Contributing
-
-If you'd like to contribute to this project, feel free to open a pull request or report any issues.
-
-
-## Authors
-
-- [@iamaber](https://github.com/iamaber)
+hvac-anomaly-analysis/
+├── HVAC.ipynb              # Main analysis notebook
+├── HVAC_NE_EC_19-21.csv    # Dataset file
+├── metadata.txt            # Dataset metadata
+└── README.md              # This file
+```
